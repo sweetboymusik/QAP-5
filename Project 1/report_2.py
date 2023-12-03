@@ -90,11 +90,11 @@ for line in policies:
 
     extra_costs = 0
     if liability_opt == "Y":
-        extra_costs += LIABILITY_RATE
+        extra_costs += LIABILITY_RATE * num_cars
     if glass_opt == "Y":
-        extra_costs += GLASS_RATE
+        extra_costs += GLASS_RATE * num_cars
     if loan_opt == "Y":
-        extra_costs += LOAN_RATE
+        extra_costs += LOAN_RATE * num_cars
 
     total_premium = insurance_premium + extra_costs
     taxes = total_premium * HST_RATE
