@@ -1,0 +1,46 @@
+[
+  {
+    "name": "Sherlock",
+    "breed": "cat",
+    "color": "orange",
+    "age": "4",
+    "gender": "male",
+    "nicknames": ["Sherlockington", "Mr. Man", "Baby Boots"],
+    "favs": {
+      "food": "tuna",
+      "sleepLocation": "on mom's or dad's lap",
+      "toy": "the rainbow worm",
+      "activity": "sooking with mom/dad"
+    }
+  },
+
+  {
+    "name": "Watson",
+    "breed": "little cat",
+    "color": "orange",
+    "age": "4",
+    "gender": "male",
+    "nicknames": ["Squrimy", "Wasson", "Little Man"],
+    "favs": {
+      "food": "treats",
+      "sleepLocation": "near mom or dad (but not on!!)",
+      "toy": "his brother",
+      "activity": "chilling on the 'catio'"
+    }
+  },
+
+  {
+    "name": "Zoey",
+    "breed": "big cat",
+    "color": "grey",
+    "age": "10",
+    "gender": "female",
+    "nicknames": ["Puss", "Miss Puss", "Girlie"],
+    "favs": {
+      "food": "cheap hard food",
+      "sleepLocation": "between mom's legs",
+      "toy": "the scrunchy fish",
+      "activity": "watching/guarding the house perimeter"
+    }
+  }
+]
