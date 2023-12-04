@@ -1,6 +1,6 @@
 # Report 1 - Policy Listing (Detailed Report)
 # For One Stop Insurance Company
-# Date Written: November 30, 2023
+# Date Written: November 30, 2023 - December 04, 2023
 # Author: Elliott Butt
 
 # import libraries
@@ -16,7 +16,7 @@ GLASS_RATE = float(defaults.readline().strip())
 LOAN_RATE = float(defaults.readline().strip())
 defaults.close()
 
-TODAY = datetime.date.today().strftime("%d-%m-%y")
+TODAY = datetime.date.today().strftime("%d-%b-%y")
 DATE_FORMAT = "%Y-%m-%d"
 
 

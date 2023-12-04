@@ -1,6 +1,6 @@
 # Report 2 - Monthly Payment Listing (Exception Report)
 # For One Stop Insurance Company
-# Date Written: November 30, 2023
+# Date Written: November 30, 2023 - December 04, 2023
 # Author: Elliott Butt
 
 # import libraries
@@ -18,7 +18,7 @@ HST_RATE = float(defaults.readline().strip())
 PROCESS_RATE = float(defaults.readline().strip())
 defaults.close()
 
-TODAY = datetime.date.today().strftime("%d-%m-%y")
+TODAY = datetime.date.today().strftime("%d-%b-%y")
 
 
 # define functions
@@ -44,14 +44,16 @@ def format_dollars_3(amt):
 
 
 # report header
+# there are some slight adjustments from the QAP5 document
+# as HST totals overflowed from the 7 characters outlined
 print()
 print("ONE STOP INSURANCE COMPANY")
 print(f"MONTHLY PAYMENT LISTING AS OF {TODAY}")
 print()
 print(
-    f"POLICY {'CUSTOMER':<20s} {'TOTAL':<11s}{' ' * 7}{'TOTAL':<10s}{'DOWN':<9s} MONTHLY")
+    f"POLICY {'CUSTOMER':<20s} {'TOTAL':<12s}{' ' * 7}{'TOTAL':<10s}{'DOWN':<8s} MONTHLY")
 print(
-    f"NUMBER {'NAME':<20s}{'PREMIUM':<11s}{'HST':<8}{'COST':<9s}{'PAYMENT':<10} PAYMENT")
+    f"NUMBER {'NAME':<20s}{'PREMIUM':<12s}{'HST':<8}{'COST':<9s}{'PAYMENT':<9} PAYMENT")
 print("=" * 73)
 
 
@@ -104,7 +106,7 @@ for line in policies:
 
     # output
     print(
-        f"{policy_num:4s}  {cust_fname + ' ' +  cust_lname:<20s}{format_dollars_1(total_premium)} {format_dollars_3(taxes)} {format_dollars_1(total)} {format_dollars_1(down_payment)} {format_dollars_1(monthly_payment)}")
+        f"{policy_num:4s}  {cust_fname + ' ' +  cust_lname:<19s}{format_dollars_1(total_premium)}   {format_dollars_3(taxes)} {format_dollars_1(total)} {format_dollars_1(down_payment)}{format_dollars_1(monthly_payment)}")
 
     # increment counters and accumulators
     policy_cnt += 1
@@ -117,6 +119,7 @@ for line in policies:
 policies.close()
 
 # report footer
+# as stated in header, HST totals overflow the 7 character limit
 print("=" * 73)
 print(
-    f"Total policies: {policy_cnt:03d} {' ' * 5} {format_dollars_1(premium_acum)} {format_dollars_3(taxes_acum)} {format_dollars_1(total_acum)} {format_dollars_1(dp_acum)} {format_dollars_1(mp_acum)}")
+    f"Total policies: {policy_cnt:03d} {' ' * 5}{format_dollars_1(premium_acum)} {format_dollars_1(taxes_acum)} {format_dollars_1(total_acum)} {format_dollars_1(dp_acum)}{format_dollars_1(mp_acum)}")
